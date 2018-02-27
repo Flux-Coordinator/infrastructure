@@ -1,4 +1,4 @@
-FROM ivantichy:jira-docker
+FROM ivantichy:jira:7.6.0
 
 MAINTAINER Patrick Scherler <pacs01dev@gmail.com>
 
