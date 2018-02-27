@@ -8,6 +8,9 @@ install Docker:
 - Docker CE manual <https://docs.docker.com/install/linux/docker-ce/ubuntu/>
 - Docker compose manual: <https://docs.docker.com/compose/install/#install-compose>
 
+### Install location
+Docker-compose is started by the service `jira-nginx-docker/systemd/nginx-jira.service`. Copy all containers (`jira`, `nginx`) and the `docker-compose.yml` to `/opt/nginx-jira/` or change the paths of this service.
+
 ### Run Systemd Services
 ```bash
 cp /jira-nginx-docker/systemd/* /lib/systemd/system/
