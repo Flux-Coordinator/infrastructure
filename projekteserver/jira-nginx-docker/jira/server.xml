@@ -1,4 +1,4 @@
-<Connector port="8888"
+<Connector port="8080"
    maxThreads="150"
    minSpareThreads="25"
    connectionTimeout="20000"
