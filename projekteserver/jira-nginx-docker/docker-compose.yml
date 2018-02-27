@@ -11,7 +11,7 @@ services:
     links:
       - jira
   jira:
-    build: ./jira/
+    image: ivantichy/jira:7.6.0
     volumes:
       - /var/docker-data/postgres:/var/lib/postgresql/9.6/main
       - /var/docker-data/jira-app:/var/atlassian/jira-app
