@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup JIRA Database and data
+
+[Service]
+Type=simple
+ExecStart=/opt/backups/backup.sh

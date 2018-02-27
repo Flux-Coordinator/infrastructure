@@ -1,0 +1,22 @@
+version: '2'
+services:
+  nginx:
+    build: ./nginx/
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    network_mode: host
+    volumes:
+      - nginx_dehydrated:/etc/dehydrated/
+    links:
+      - jira
+  jira:
+    build: ./jira/
+    volumes:
+      - /var/docker-data/postgres:/var/lib/postgresql/9.6/main
+      - /var/docker-data/jira-app:/var/atlassian/jira-app
+      - /var/docker-data/jira-home:/var/atlassian/jira-home
+
+volumes:
+  nginx_dehydrated:

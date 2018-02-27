@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup JIRA Database and data
+
+[Timer]
+OnCalendar=*-*-* 00:00:00
+Persistent=true
+
+[Install]
+wantedBy=timers.target

@@ -1,0 +1,7 @@
+[Unit]
+Description=Renew JIRA's let's encrypt certificates with dehydrated
+Requires=nginx-jira.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/docker-compose -f /opt/nginx-jira/docker-compose.yml exec nginx dehydrated --cron

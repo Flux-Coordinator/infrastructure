@@ -1,0 +1,15 @@
+[Unit]
+Description=Nginx Reverse Proxy for JIRA
+After=docker.service
+Requires=docker.service
+
+[Service]
+TimeoutStartSec=0
+ExecStartPre=/usr/local/bin/docker-compose -f /opt/nginx-jira/docker-compose.yml kill
+ExecStartPre=/usr/local/bin/docker-compose -f /opt/nginx-jira/docker-compose.yml rm -f
+ExecStartPre=/usr/local/bin/docker-compose -f /opt/nginx-jira/docker-compose.yml pull
+ExecStart=/usr/local/bin/docker-compose -f /opt/nginx-jira/docker-compose.yml up --remove-orphans --force-recreate --build
+ExecStop=/usr/local/bin/docker-compose -f /opt/nginx-jira/docker-compose.yml stop
+
+[Install]
+WantedBy=multi-user.target
